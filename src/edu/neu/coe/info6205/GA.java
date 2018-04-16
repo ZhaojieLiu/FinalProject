@@ -74,7 +74,7 @@ public class GA {
             all.put(a[i], TotalNumb[i]);
         }
 
-        System.out.println("the best fitness ：" + all.firstEntry());
+        //System.out.println("the best fitness ：" + all.firstEntry());
     }
 
     public double getfitness(String str) {
@@ -84,8 +84,8 @@ public class GA {
         // You can define functions that you want to optimize.
         // function of two variables
         //double fit = 3 - Math.sin(2 * x[0]) * Math.sin(2 * x[0])- Math.sin(2 * x[1]) * Math.sin(2 * x[1]);
-        //double fit = x[0]*x[0]*Math.sin(6*Math.PI*x[1])-3*x[1]*x[1]*Math.sin(2*Math.PI*x[0]);
-        double fit = 1+(x[0]*x[0]+x[1]*x[1]);
+        double fit = x[0]*x[0]*Math.sin(6*Math.PI*x[1])-3*x[1]*x[1]*Math.sin(2*Math.PI*x[0]);
+        //double fit = 1+(x[0]*x[0]+x[1]*x[1]);
         //double fit = x[0]*x[0]*x[0]-x[1]*x[1]*x[1]+3*x[0]*x[0]+3*x[1]*x[1]-9*x[0]; 
         //double fit = 0.5 + ((Math.sin(Math.sqrt(x[0] * x[0] + x[1] * x[1]))) * (Math.sin(Math.sqrt(x[0] * x[0] + x[1] * x[1]))) - 0.5) / ((1 + 0.001 * (x[0] * x[0] + x[1] * x[1])) * (1 + 0.001 * (x[0] * x[0] + x[1] * x[1])));
         return fit;
@@ -129,7 +129,7 @@ public class GA {
                     }
                 }
             }
-            log.info("Cumulative probability:"+c[i]);
+            //log.info("Cumulative probability:"+c[i]);
         }
     }
 
@@ -142,12 +142,12 @@ public class GA {
                 Crossover2 = TotalNumb[(i + 1) % CNumb].substring(0, position) + TotalNumb[i].substring(position);
                 TotalNumb[i] = Crossover1;
                 TotalNumb[(i + 1) / CNumb] = Crossover2;
-                log.info("No " + i + " chromosome"+"and No "+(i+1)+" chromosome " + "crossover position:" + position);
+                //log.info("No " + i + " chromosome"+"and No "+(i+1)+" chromosome " + "crossover position:" + position);
                 
             }
             
         }
-        System.out.println(" ");
+        
     }
 
     public void mutation() {
@@ -183,7 +183,7 @@ public class GA {
             }
            		
             TotalNumb[chromCode] = chromo;
-            log.info("No " + chromCode + " chromosome" + " " + "Mutations position:" + mutaCode);
+            //log.info("No " + chromCode + " chromosome" + " " + "Mutations position:" + mutaCode);
         }
     }
 
