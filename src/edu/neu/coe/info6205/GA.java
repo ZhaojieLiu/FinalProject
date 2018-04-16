@@ -104,7 +104,7 @@ public class GA {
 
             F = F + a[i];
         }
-        //System.out.println("edu.neu.coe.info6205.GA.getMinFitness()");
+        
     }
 
     public void choose() {
@@ -129,6 +129,7 @@ public class GA {
                     }
                 }
             }
+            log.info("Cumulative probability:"+c[i]);
         }
     }
 
@@ -152,9 +153,9 @@ public class GA {
     public void mutation() {
         for (int i = 0; i < 4; i++) {
             int number = (int) (Math.random() * GENE * CNumb + 1);
-            int chromCode = (int) (number / GENE) + 1; // 染色体号
+            int chromCode = (int) (number / GENE) + 1; 
 
-            int mutaCode = number - (chromCode - 1) * GENE; // 基因号
+            int mutaCode = number - (chromCode - 1) * GENE; 
             if (mutaCode == 0) {
                 mutaCode = 1;
             }
@@ -163,13 +164,13 @@ public class GA {
                 chromCode = 9;
             }
             String chromo;
-            String code;   //记录变异位点变异后的编码
-            if (TotalNumb[chromCode].charAt(mutaCode - 1) == '0') {    //当变异位点为0时
+            String code;   
+            if (TotalNumb[chromCode].charAt(mutaCode - 1) == '0') {    
                 code = "1";
             } else {
                 code = "0";
             }
-            //当变异位点在首、中段和尾时的突变情况
+           
             if (mutaCode == 1) {
                 chromo = code + TotalNumb[chromCode].substring(mutaCode);
             } else {
@@ -180,7 +181,7 @@ public class GA {
                     chromo = TotalNumb[chromCode].substring(0, mutaCode - 1) + code;
                 }
             }
-            //记录下变异后的染色体		
+           		
             TotalNumb[chromCode] = chromo;
             log.info("No " + chromCode + " chromosome" + " " + "Mutations position:" + mutaCode);
         }

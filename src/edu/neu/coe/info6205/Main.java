@@ -44,7 +44,7 @@ public class Main {
 		
 		double[] x = ga.TransCoding(ga.Beststrcode);
                 
-                System.out.println("Min:" + ga.Bestfitness);
+                //System.out.println("Min:" + ga.Bestfitness);
 		//str = "Min:" + ga.Bestfitness + '\n' + "No "+ ga.BestGenercode + " chromosome:<" + ga.Beststrcode + ">" + '\n' + "x=" + x[0] + '\n' + "y=" + x[1];
                 ///System.out.println("The final result:");
 		//System.out.println(str);
